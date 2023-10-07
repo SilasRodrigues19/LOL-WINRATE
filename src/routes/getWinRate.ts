@@ -31,7 +31,7 @@ export async function getWinRate(app: FastifyInstance) {
   app.get('/getWinsAndLosses', opts, async (_, reply) => {
     try {
       const response = await fetch(
-        `https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/j6Bkottrsh0yFzMrCcwbvOXUntPPgPTW6RIJ09zdOZ_8eVg?api_key=${apiKey}`
+        `https://br1.api.riotgames.com/lol/league/v4/entries/by-summoner/KCMpLCV5YUMxNy7XxyBl7E76azCc3QaqdASceWh7qe7AMxU?api_key=${apiKey}`
       );
       const data = await response.json();
 
@@ -41,11 +41,13 @@ export async function getWinRate(app: FastifyInstance) {
         );
 
         if (soloQueue) {
-          const { wins, losses, tier, rank, leaguePoints } = soloQueue;
+          const { wins, losses, tier, rank, leaguePoints, summonerName } = soloQueue;
           const winRate = (wins / (wins + losses)) * 100;
           const elo = `${tier} ${rank} - ${leaguePoints} PDL`;
           reply.send(
-            `──────────────────────────────── ${elo}, ${wins}W ${losses}L (Win Rate: ${winRate.toFixed(2)}%) ────────────────────────────────`
+            `──────────────────────────────── ${summonerName} - ${elo} ${wins}W ${losses}L (Win Rate ${winRate.toFixed(
+              2
+            )}%) ────────────────────────────────`
           );
         } else {
           reply.code(500).send({ error: 'Solo queue data not found' });
