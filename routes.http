@@ -1,0 +1,5 @@
+# @name get-wins-and-losses
+
+GET http://localhost:3333/getWinsAndLosses
+
+###

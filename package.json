@@ -1,0 +1,23 @@
+{
+  "name": "RiotAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.4.0",
+    "cors": "^2.8.5",
+    "fastify": "^4.23.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "dotenv": "^16.3.1",
+    "tsx": "^3.13.0"
+  }
+}
