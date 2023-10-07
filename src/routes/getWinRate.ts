@@ -30,7 +30,7 @@ export async function getWinRate(app: FastifyInstance) {
       if (Array.isArray(data) && data.length > 0) {
         const wins = data[0].wins;
         const losses = data[0].losses;
-        reply.send({ wins, losses });
+        reply.send(`Vitórias: ${wins}, Derrotas: ${losses}`);
       } else {
         reply.code(500).send({ error: 'Data not found' });
       }
