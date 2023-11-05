@@ -13,10 +13,12 @@ app.register(fastifyCors, {
 app.register(getSummonerId);
 app.register(getWinRate);
 
+const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
+
 app
   .listen({
     port: 3333,
-    host: '0.0.0.0'
+    host
   })
   .then(() => console.log('Server is running!'))
   .catch((err) => console.error(err));
