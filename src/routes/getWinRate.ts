@@ -3,7 +3,6 @@ import fetch from 'node-fetch';
 import 'dotenv/config';
 
 const apiKey = process.env.RIOT_API;
-const summonerId = process.env.SUMMONER_ID;
 const regionCode = process.env.REGION_CODE;
 
 interface QueueData {
@@ -32,9 +31,17 @@ export async function getWinRate(app: FastifyInstance) {
 
   app.get('/getWinsAndLosses', opts, async (_, reply) => {
     try {
+
+      const summonerIdResponse = await fetch(
+        'http://localhost:3333/getSummonerId'
+      );
+      const summonerData = await summonerIdResponse.text();
+      const summonerId: string = summonerData;
+
+      
       const response = await fetch(
         `https://${regionCode}.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${apiKey}`
-      );
+        );
 
       const data = await response.json();
 
