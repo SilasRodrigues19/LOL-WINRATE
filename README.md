@@ -65,7 +65,7 @@ To create the command, simply use the syntax below in the Twitch live chat where
   !cmd add winrate $(customapi.https://mydomain.com/getWinsAndLosses)
 ```
 
-Replacing `mydomain.com` with your real domain, just use `!winrate`` and the command will return with the summoner's data.
+Replacing `mydomain.com` with your real domain, just use `!winrate` and the command will return with the summoner's data.
 
 <hr>
 
@@ -94,7 +94,7 @@ Technologies used in the project.
 
 ## Pre requisites
 
-1. Access the `.env.example` file and rename it to `.env`
+1. Access the [`.env.example`](/.env.example)  file and rename it to `.env`
 
 2. Generate your api key in the following
   ```sh
