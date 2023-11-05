@@ -50,10 +50,9 @@
 
 ## About The Project
 
-| StreamElements Command                          | 
-| ----------------------------------------------- |
-| [![Preview][product-screenshot]][project-link]  | 
-
+| StreamElements Command                         |
+| ---------------------------------------------- |
+| [![Preview][product-screenshot]][project-link] |
 
 ## How it works
 
@@ -69,7 +68,6 @@ Replacing `mydomain.com` with your real domain, just use `!winrate` and the comm
 
 <hr>
 
-
 ### Built With
 
 Technologies used in the project.
@@ -77,7 +75,7 @@ Technologies used in the project.
 ### Libraries
 
 - [tsup](https://tsup.egoist.dev/)
-  Bundle your TypeScript library with no config, powered by esbuild. 
+  Bundle your TypeScript library with no config, powered by esbuild.
 
 ### Frameworks
 
@@ -89,17 +87,18 @@ Technologies used in the project.
 - [TypeScript](https://www.typescriptlang.org/)
   A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
 
-
 <!-- GETTING STARTED -->
 
 ## Pre requisites
 
-1. Access the [`.env.example`](/.env.example)  file and rename it to `.env`
+1. Access the [`.env.example`](/.env.example) file and rename it to `.env`
 
 2. Generate your api key in the following
-  ```sh
-    https://developer.riotgames.com/
-  ```
+
+```sh
+  https://developer.riotgames.com/
+```
+
 Copy the value and paste it inside the quotes in `RIOT API` in the `.env` file
 
 3. Do the same with the summoner's nickname, pasting it into `SUMMONER_NAME`
@@ -108,26 +107,24 @@ Copy the value and paste it inside the quotes in `RIOT API` in the `.env` file
 
 Here is a list of the acronyms for the regions:
 
-| Region Code | Host                        |
-|------------ |-----------------------------|
-| BR1         | br1.api.riotgames.com       |
-| EUN1        | eun1.api.riotgames.com      |
-| EUW1        | euw1.api.riotgames.com      |
-| JP1         | jp1.api.riotgames.com       |
-| KR          | kr.api.riotgames.com        |
-| LA1         | la1.api.riotgames.com       |
-| LA2         | la2.api.riotgames.com       |
-| NA1         | na1.api.riotgames.com       |
-| OC1         | oc1.api.riotgames.com       |
-| TR1         | tr1.api.riotgames.com       |
-| RU          | ru.api.riotgames.com        |
-| PH2         | ph2.api.riotgames.com       |
-| SG2         | sg2.api.riotgames.com       |
-| TH2         | th2.api.riotgames.com       |
-| TW2         | tw2.api.riotgames.com       |
-| VN2         | vn2.api.riotgames.com       |
-
-
+| Region Code | Host                   |
+| ----------- | ---------------------- |
+| BR1         | br1.api.riotgames.com  |
+| EUN1        | eun1.api.riotgames.com |
+| EUW1        | euw1.api.riotgames.com |
+| JP1         | jp1.api.riotgames.com  |
+| KR          | kr.api.riotgames.com   |
+| LA1         | la1.api.riotgames.com  |
+| LA2         | la2.api.riotgames.com  |
+| NA1         | na1.api.riotgames.com  |
+| OC1         | oc1.api.riotgames.com  |
+| TR1         | tr1.api.riotgames.com  |
+| RU          | ru.api.riotgames.com   |
+| PH2         | ph2.api.riotgames.com  |
+| SG2         | sg2.api.riotgames.com  |
+| TH2         | th2.api.riotgames.com  |
+| TW2         | tw2.api.riotgames.com  |
+| VN2         | vn2.api.riotgames.com  |
 
 ## Installation
 
@@ -140,10 +137,13 @@ Here is a list of the acronyms for the regions:
    pnpm install
    ```
 3. In the project directory, you can run development mode with the following
+
    ```sh
    pnpm run dev
    ```
+
    or build and run production mode with the following
+
    ```sh
    pnpm run build && pnpm start
    ```
@@ -154,8 +154,7 @@ Here is a list of the acronyms for the regions:
    ```
    <!-- CONTRIBUTING -->
 
-
-###### Optionally, you can install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension and run directly through VSCode using the [`routes.http`](/routes.http) file 
+###### Optionally, you can install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension and run directly through VSCode using the [`routes.http`](/routes.http) file
 
 ## Contributing
 
