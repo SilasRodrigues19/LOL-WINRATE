@@ -33,15 +33,17 @@ export async function getWinRate(app: FastifyInstance) {
     try {
 
       const summonerIdResponse = await fetch(
-        'http://localhost:3333/getSummonerId'
+        'http://localhost:3333/getSummonerId',
+        { method: 'GET' }
       );
       const summonerData = await summonerIdResponse.text();
       const summonerId: string = summonerData;
 
       
       const response = await fetch(
-        `https://${regionCode}.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${apiKey}`
-        );
+        `https://${regionCode}.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${apiKey}`,
+        { method: 'GET' }
+      );
 
       const data = await response.json();
 

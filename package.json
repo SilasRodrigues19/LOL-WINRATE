@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,8 @@
     "@fastify/cors": "^8.4.0",
     "cors": "^2.8.5",
     "fastify": "^4.23.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "2",
+    "tsup": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.3",

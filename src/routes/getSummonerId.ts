@@ -35,7 +35,8 @@ export async function getSummonerId(app: FastifyInstance) {
     try {
 
       const response = await fetch(
-        `https://${regionCode}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${apiKey}`
+        `https://${regionCode}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${apiKey}`,
+        { method: 'GET' }
       );
 
       const data = await response.json() as SummonerData;
