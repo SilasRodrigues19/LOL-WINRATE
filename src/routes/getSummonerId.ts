@@ -2,8 +2,10 @@ import { FastifyInstance, RouteShorthandOptions } from 'fastify';
 import fetch from 'node-fetch';
 import 'dotenv/config';
 
+import { checkDotEnv } from '../lib/checkDotEnv';
+
 const apiKey = process.env.RIOT_API;
-const summonerName = process.env.SUMMONER_NAME;
+const summonerName = checkDotEnv('SUMMONER_NAME');
 const regionCode = process.env.REGION_CODE;
 
 interface SummonerData {
@@ -16,8 +18,7 @@ interface SummonerData {
   summonerLevel: number;
 }
 
-export async function getSummonerId(app: FastifyInstance) {
-
+export const getSummonerId = async (app: FastifyInstance) => {
   const opts: RouteShorthandOptions = {
     schema: {
       response: {
@@ -29,22 +30,20 @@ export async function getSummonerId(app: FastifyInstance) {
         },
       },
     },
-  }
+  };
 
   app.get('/getSummonerId', opts, async (_, reply) => {
     try {
-
       const response = await fetch(
         `https://${regionCode}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${apiKey}`,
         { method: 'GET' }
       );
 
-      const data = await response.json() as SummonerData;
+      const data = (await response.json()) as SummonerData;
 
       reply.send(data.id);
-
-    } catch(err) {
+    } catch (err) {
       reply.code(500).send({ error: err.message });
-    } 
-  })
-}
+    }
+  });
+};
